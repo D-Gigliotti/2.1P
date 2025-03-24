@@ -37,17 +37,6 @@ void setup() {
 }
 
 void loop() {
-
-  if(WiFi.status() != WL_CONNECTED){
-    Serial.print("attempting to connect to SSID: ");
-    Serial.println(SECRET_SSID);
-    while(WiFi.status() != WL_CONNECTED){
-      WiFi.begin(SECRET_SSID, SECRET_PASS);
-      delay(5000);
-    }
-    Serial.println("\nConnected.");
-  }
-
   // Read humidity and temperature
   float humidity = dht.readHumidity();
   float temperature = dht.readTemperature();
